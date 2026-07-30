@@ -388,7 +388,10 @@ def show_research():
 
     if not sell_signal:
 
-    st.success("✅ Continue Holding")
+        st.success(
+            "✅ Continue Holding"
+        )
+        
     st.subheader(
         "Trade Quality Assessment"
     )
