@@ -366,7 +366,29 @@ def show_research():
         "Rating",
         signal_rating
     )
+st.subheader("🚪 Exit Decision")
 
+st.write("Exit section loaded")
+
+sell_signal = False
+
+if current_close < current_sma200:
+
+    sell_signal = True
+    st.error("❌ Below SMA200")
+
+if rs_value < 10:
+
+    sell_signal = True
+    st.warning("⚠️ Relative Strength Deteriorating")
+
+if market_regime == "BEAR":
+
+    st.warning("⚠️ Market Regime Bearish")
+
+if not sell_signal:
+
+    st.success("✅ Continue Holding")
     st.subheader(
         "Trade Quality Assessment"
     )
